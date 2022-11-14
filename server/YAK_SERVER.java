@@ -19,7 +19,7 @@ public class YAK_SERVER {
 
             }
         } catch (Exception e) {
-            System.out.println("Error " + e.getStackTrace());
+            System.out.println("User Disconnected ");
         }
     }
 }

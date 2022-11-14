@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class YAK_CLIENT {
 
     public static void main(String[] args) {
-        try (Socket sock = new Socket("192.168.86.21", 45999)){
+        try (Socket sock = new Socket(/*"192.168.86.21"*/"localhost", 45999)){
             //reading the input from server
             BufferedReader input = new BufferedReader( new InputStreamReader(sock.getInputStream()));
             
@@ -31,17 +31,18 @@ public class YAK_CLIENT {
                     System.out.println("Enter your name ");
                     userYak = scanner.nextLine();
                     handle = userYak;
-                    ghostWriteR.println(userYak);
+                    ghostWriteR.println(userYak + " has entered the yak");
                     if (userYak.equals("exit")) {
-                        System.out.println("User name taken");
+                        System.out.println("User Exists");
                         break;
                     }
                } 
                else {
-                    String message = ( "(" + handle + ") ~ : " );
+                    String message = ( "~: " );
                     System.out.print(message);
                     userYak = scanner.nextLine();
-                    ghostWriteR.print(userYak);
+
+                    ghostWriteR.println(handle + "~: " + userYak);
                     if (userYak.equals("exit")) {
                         //reading the input from server
                         break;
