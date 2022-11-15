@@ -42,7 +42,7 @@ public class YAK_CLIENT {
                     System.out.print(message);
                     userYak = scanner.nextLine();
 
-                    ghostWriteR.println(handle + "~: " + userYak);
+                    ghostWriteR.println(handle + ": " + userYak);
                     if (userYak.equals("exit")) {
                         //reading the input from server
                         break;
